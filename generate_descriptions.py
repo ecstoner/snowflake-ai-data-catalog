@@ -6,7 +6,11 @@ from dotenv import load_dotenv
 # Load environment variables (OpenAI API Key)
 load_dotenv()
 
-# Initialize OpenAI's GPT model via LangChain
+# Initialize a model via LangChain
+# Alternatives: 
+# llm = HuggingFaceLLM(model_name="gpt2")                               -- from langchain.llms import HuggingFaceLLM
+# llm = CohereLLM(api_key=os.getenv("COHERE_API_KEY"), model="medium")  -- from langchain.llms import CohereLLM
+# llm = AI21LLM(api_key=os.getenv("AI21_API_KEY"), model="j1-large")    -- from langchain.llms import AI21LLM
 llm = ChatOpenAI(
     model_name="gpt-4",
     openai_api_key=os.getenv("OPENAI_API_KEY")
@@ -46,4 +50,3 @@ def generate_column_description(table_name, column_name, data_type, sample_data)
     # Generate the description using OpenAI's GPT-4 model
     response = llm.predict(prompt)
     return response
-
