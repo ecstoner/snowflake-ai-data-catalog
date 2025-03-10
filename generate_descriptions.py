@@ -46,3 +46,4 @@ def generate_column_description(table_name, column_name, data_type, sample_data)
     # Generate the description using OpenAI's GPT-4 model
     response = llm.predict(prompt)
     return response
+
