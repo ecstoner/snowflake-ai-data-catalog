@@ -7,14 +7,13 @@
 * **main.py** 🚀 Orchestrates the entire process
 * **snowflake_connection.py** - Handles Snowflake connection
 * **fetch_sample_data.py** - Fetches sample data dynamically from TPC-DS
-* **ai_description_generator.py** - Uses LangChain for AI descriptions
-* **data_validations/**
-  * **update_dbt_docs.py** - Updates DBT `schema.yml` with AI descriptions
-  * **data_validation.py** - Runs Great Expectations validations
-  * **data_quality.py** - Logs GX validation results to Snowflake
-  * **update_data_catalog.py** - Inserts AI-generated docs into Snowflake
-  * **track_schema_changes.py** - Tracks schema changes over time
-  * **lineage_tracking.py** - Tracks table relationships
+* **generate_descriptions.py** - Uses LangChain for AI descriptions
+* **update_dbt_docs.py** - Updates DBT `schema.yml` with AI descriptions
+* **data_validation.py** - Runs Great Expectations validations
+* **data_quality.py** - Logs GX validation results to Snowflake
+* **update_data_catalog.py** - Inserts AI-generated docs into Snowflake
+* **track_schema_changes.py** - Tracks schema changes over time
+* **lineage_tracking.py** - Tracks table relationships
 * **streamlit_app.py** - Streamlit UI for browsing the catalog
 * **dbt_project/** - DBT project folder
   * **models/**
