@@ -32,11 +32,3 @@ def connect_to_snowflake(warehouse=None, database=None, schema=None):
     except Exception as e:
         logger.error(f"Failed to connect to Snowflake: {e}")
         raise
-
-# have not decided whether i want this yet
-if __name__ == "__main__":
-    try:
-        conn = connect_to_snowflake()
-        # Perform database operations
-    except Exception as e:
-        logger.error(f"An error occurred: {e}")
