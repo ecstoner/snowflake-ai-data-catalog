@@ -11,7 +11,21 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 def connect_to_snowflake(warehouse=None, database=None, schema=None):
-    """ Establish a connection to Snowflake using GitHub Secrets or local .env values. """
+    """
+    Establish a connection to Snowflake using GitHub Secrets or local .env values.
+
+    Args:
+        warehouse (str, optional): The Snowflake warehouse to use. Defaults to None.
+        database (str, optional): The Snowflake database to use. Defaults to None.
+        schema (str, optional): The Snowflake schema to use. Defaults to None.
+
+    Returns:
+        snowflake.connector.SnowflakeConnection: A Snowflake connection object.
+
+    Raises:
+        ValueError: If required environment variables are not set.
+        Exception: If the connection to Snowflake fails.
+    """
     try:
         # Ensure required environment variables are set
         required_env_vars = ["SNOWFLAKE_USER", "SNOWFLAKE_PASSWORD", "SNOWFLAKE_ACCOUNT"]
