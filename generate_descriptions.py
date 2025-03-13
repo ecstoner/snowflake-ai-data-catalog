@@ -1,10 +1,6 @@
 import os
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts import PromptTemplate
-from dotenv import load_dotenv
-
-# Load environment variables (OpenAI API Key)
-load_dotenv()
 
 # Initialize a model via LangChain
 # Alternatives: 
@@ -33,7 +29,7 @@ def generate_column_description(table_name, column_name, data_type, sample_data)
     Args:
     - table_name (str): The name of the table.
     - column_name (str): The name of the column.
-    - data_type (str): The column's data type (e.g., STRING, INT).
+    - data_type (str): The column's data type.
     - sample_data (list): A small set of example values from the column.
 
     Returns:
@@ -47,6 +43,6 @@ def generate_column_description(table_name, column_name, data_type, sample_data)
         sample_data=sample_data
     )
 
-    # Generate the description using OpenAI's GPT-4 model
+    # Generate the description using the language model
     response = llm.predict(prompt)
     return response
