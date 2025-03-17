@@ -15,6 +15,9 @@
 * **track_schema_changes.py** - Tracks schema changes over time
 * **lineage_tracking.py** - Tracks table relationships
 * **streamlit_app.py** - Streamlit UI for browsing the catalog
+* **tests/** - Directory for automated testing
+  * **__init__.py** - Marks `tests/` as a package
+  * **test_snowflake_connection.py** - Tests Snowflake connection
 * **dbt_project/** - DBT project folder
   * **models/**
     * **fact_tables/** - Stores DBT models for TPC-DS fact tables
